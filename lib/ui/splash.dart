@@ -11,11 +11,11 @@ class SplashPage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Text(
               'Artigo',
               style: TextStyle(
-                color: Color(0xffffffff),
+                color: Get.theme.primaryTextTheme.overline!.color,
                 fontSize: 64,
                 fontFamily: 'Montserrat',
               ),
@@ -23,7 +23,7 @@ class SplashPage extends StatelessWidget {
             Text(
               '안녕하세요',
               style: TextStyle(
-                color: Color(0xffffffff),
+                color: Get.theme.primaryTextTheme.overline!.color,
                 fontSize: 32,
               ),
             ),

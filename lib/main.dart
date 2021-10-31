@@ -12,7 +12,7 @@ class Artigo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'artigo',
+      title: 'Artigo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
