@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "827287054914",
+    "firebase_url": "https://artigo-388ac-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "artigo-388ac",
+    "storage_bucket": "artigo-388ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827287054914:android:198359faeb760f9d805bdb",
+        "android_client_info": {
+          "package_name": "com.zeratulspc.artigo2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827287054914-mtl1kk7njgs8pv3g8qdmt6uo3cff6tsk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zeratulspc.artigo2",
+            "certificate_hash": "7a1e10b7cbed834166df60a9cda9e14cd8180d1a"
+          }
+        },
+        {
+          "client_id": "827287054914-chfnecqkl5mdhl9gdrn6t5kvfn66tu3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtyY9_QO9kxwnYcm42Qk49dpf6pdBmEEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827287054914-chfnecqkl5mdhl9gdrn6t5kvfn66tu3j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
