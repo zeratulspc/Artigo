@@ -1,8 +1,12 @@
+import 'package:artigo2/controller/splash_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SplashPage extends StatelessWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  final controller = Get.put<SplashController>(SplashController());
+  SplashPage({Key? key}) : super(key: key){
+    controller.login();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +22,6 @@ class SplashPage extends StatelessWidget {
                 color: Get.theme.primaryTextTheme.overline!.color,
                 fontSize: 64,
                 fontFamily: 'Montserrat',
-              ),
-            ),
-            Text(
-              '안녕하세요',
-              style: TextStyle(
-                color: Get.theme.primaryTextTheme.overline!.color,
-                fontSize: 32,
               ),
             ),
           ],
