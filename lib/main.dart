@@ -1,3 +1,4 @@
+import 'package:artigo2/routes/pages.dart';
 import 'package:artigo2/ui/splash.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class Artigo extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Artigo',
+      getPages: AppPages.pages,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

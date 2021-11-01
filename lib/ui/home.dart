@@ -1,7 +1,10 @@
+import 'package:artigo2/controller/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+  final controller = Get.put<HomeController>(HomeController());
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +16,12 @@ class HomePage extends StatelessWidget {
             fontFamily: "Montserrat"
           ),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: ()=>controller.logout(),
+          ),
+        ],
       ),
     );
   }

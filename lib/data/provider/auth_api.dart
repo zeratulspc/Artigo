@@ -17,4 +17,9 @@ class AuthApi {
     return await auth.signInWithCredential(credential);
   }
 
+  Future<void> logout() async {
+    await GoogleSignIn().signOut();
+    await auth.signOut();
+  }
+
 }
