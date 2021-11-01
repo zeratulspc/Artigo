@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "827287054914-krako4k0iug9v51fcpo33ie84jk6fe06.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zeratulspc.artigo2",
+            "certificate_hash": "98164beb167ebca8712d80ddaff8b7df4031a569"
+          }
+        },
+        {
           "client_id": "827287054914-mtl1kk7njgs8pv3g8qdmt6uo3cff6tsk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
