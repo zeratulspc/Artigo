@@ -9,4 +9,11 @@ class User {
     required this.description,
     required this.registerDate,
   });
+
+  Map<String, dynamic> toJson()=>{
+    'id':id,
+    'username':username,
+    'description':description,
+    'registerDate':registerDate,
+  };
 }
