@@ -1,19 +1,29 @@
+import 'package:firebase_database/firebase_database.dart';
+
 class User {
-  final int id;
+  final String uid;
   final String username;
   final String description;
   final DateTime registerDate;
   User({
-    required this.id,
+    required this.uid,
     required this.username,
     required this.description,
     required this.registerDate,
   });
 
+  factory User.fromSnapshot(DataSnapshot d) {
+    return User(
+      uid: d.key!,
+      username: d.value['username']!,
+      description: d.value['description']!,
+      registerDate: DateTime.parse(d.value['registerDate']!),
+    );
+  }
+
   Map<String, dynamic> toJson()=>{
-    'id':id,
     'username':username,
     'description':description,
-    'registerDate':registerDate,
+    'registerDate':registerDate.toIso8601String(),
   };
 }
