@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "827287054914-u5qi513uhds41o3dvl3l45hcbfj58d53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zeratulspc.artigo2",
+            "certificate_hash": "60aab5609b86241276081b15582af982c9587cf3"
+          }
+        },
+        {
           "client_id": "827287054914-chfnecqkl5mdhl9gdrn6t5kvfn66tu3j.apps.googleusercontent.com",
           "client_type": 3
         }
