@@ -3,7 +3,7 @@ import 'package:artigo2/routes/pages.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
-  final AuthApi authApi = AuthApi();
+  final AuthAPI authApi = AuthAPI();
 
   login() async {
     var credential = await authApi.signInWithGoogle();

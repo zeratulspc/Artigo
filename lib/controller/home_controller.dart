@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  final AuthApi authApi = AuthApi();
+  final AuthAPI authApi = AuthAPI();
   final PageController pageController = PageController(initialPage: 0, keepPage: true);
 
   final _homeIdx = 0.obs;

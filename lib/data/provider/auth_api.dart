@@ -4,7 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 import 'package:artigo2/data/models/user.dart' as models;
 
-class AuthApi {
+class AuthAPI {
   final FirebaseAuth auth = FirebaseAuth.instance;
   final userDBRef = FirebaseDatabase.instance.reference().child("Users");
 
