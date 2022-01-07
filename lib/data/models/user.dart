@@ -5,11 +5,13 @@ class User {
   final String username;
   final String description;
   final DateTime registerDate;
+  final List<DateTime> loginDate;
   User({
     required this.uid,
     required this.username,
     required this.description,
     required this.registerDate,
+    required this.loginDate,
   });
 
   factory User.fromSnapshot(DataSnapshot d) {
@@ -18,6 +20,7 @@ class User {
       username: d.value['username']!,
       description: d.value['description']!,
       registerDate: DateTime.parse(d.value['registerDate']!),
+      loginDate: d.value['loginDate'].map((e)=>DateTime.parse(e)).toList(),
     );
   }
 

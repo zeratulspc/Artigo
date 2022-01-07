@@ -41,6 +41,7 @@ class AuthAPI {
       username:username,
       description:description,
       registerDate:DateTime.now(),
+      loginDate: [],
     );
     userDBRef.child(uid).set(user.toJson());
   }
