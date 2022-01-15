@@ -1,7 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 
 class Post {
-  final String key;
+  final String? key;
   final String title;
   final String body;
   final String owner;
@@ -9,8 +9,8 @@ class Post {
   final List<DateTime> editDate;
 
   Post({
+    this.key,
     required this.title,
-    required this.key,
     required this.body,
     required this.owner,
     required this.postDate,
@@ -28,12 +28,22 @@ class Post {
     );
   }
 
+  factory Post.fromMap(Map<dynamic, dynamic> m) {
+    return Post(
+      title: m['title'],
+      body: m['body'],
+      owner: m['owner'],
+      postDate: DateTime.parse(m['postDate']!),
+      editDate: m['editDate']?.values.map((e)=>DateTime.parse(e)).toList().cast<DateTime>()??<DateTime>[],
+    );
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'title' : title,
       'body' : body,
       'owner' : owner,
-      'postDate' : postDate,
+      'postDate' : postDate.toIso8601String(),
       'editDate' : editDate.map((e) => e.toIso8601String()).toList(),
     };
   }

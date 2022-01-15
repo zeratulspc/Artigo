@@ -10,10 +10,8 @@ class UserController extends GetxController {
   set user(models.User? v) => _user.value = v;
   models.User? get user => _user.value;
 
-  @override
-  void onInit() async {
+  Future<void> fetchUser() async {
     user = await authAPI.fetchUser();
-    super.onInit();
   }
 
   logout() async {

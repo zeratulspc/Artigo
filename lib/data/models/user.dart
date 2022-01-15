@@ -20,7 +20,7 @@ class User {
       username: d.value['username']!,
       description: d.value['description']!,
       registerDate: DateTime.parse(d.value['registerDate']!),
-      loginDate: d.value['loginDate'].map((e)=>DateTime.parse(e)).toList(),
+      loginDate: d.value['loginDate'].values.map((e)=>DateTime.parse(e)).toList().cast<DateTime>(),
     );
   }
 

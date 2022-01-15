@@ -15,7 +15,7 @@ class PostAPI {
 
   /// 피드를 불러옵니다
   Future<List<models.Post>> fetchFeed() async {
-    return await postDBRef.get().then((v) => v.value.map((e)=>models.Post.fromSnapshot(e)).toList());
+    return await postDBRef.get().then((v) => v.value.values.map((e)=>models.Post.fromMap(e)).toList().cast<models.Post>());
   }
 
   /// 하나의 게시글을 불러옵니다
@@ -24,8 +24,8 @@ class PostAPI {
   }
 
   /// 게시글을 수정합니다
-  Future<void> updatePost(models.Post post) async {
-    await postDBRef.child(post.key).set(post.toJson());
+  Future<void> updatePost(String postKey, models.Post post) async {
+    await postDBRef.child(postKey).set(post.toJson());
   }
 
   /// 게시글을 삭제합니다
