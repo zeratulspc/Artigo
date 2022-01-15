@@ -8,6 +8,7 @@ class AuthAPI {
   final FirebaseAuth auth = FirebaseAuth.instance;
   final userDBRef = FirebaseDatabase.instance.reference().child("Users");
 
+  /// 구글 계정을 통해 로그인합니다
   Future<UserCredential> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
     final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
@@ -16,7 +17,7 @@ class AuthAPI {
       idToken: googleAuth?.idToken,
     );
     var cred = await auth.signInWithCredential(credential);
-    if(!await isUserValid(cred.user!.uid)) {
+    if(!await isUserExists(cred.user!.uid)) {
       await createUserInfo(
           uid: cred.user!.uid,
           username: cred.user!.displayName??"",
@@ -25,16 +26,18 @@ class AuthAPI {
     }
     UserCredential userCredential = await auth.signInWithCredential(credential);
     if(userCredential.credential!=null) {
-      await addLoginHistory(userCredential.user!.uid);
+      await addLoginDate(userCredential.user!.uid);
     }
     return userCredential;
   }
 
-  Future<bool> isUserValid(String uid) async {
+  /// 사용자가 존재하는지 확인합니다
+  Future<bool> isUserExists(String uid) async {
     var data = await userDBRef.child(uid).once();
     return data.exists;
   }
 
+  /// 사용자 정보를 생성합니다
   Future<void> createUserInfo({
     required String uid,
     required String username,
@@ -50,7 +53,8 @@ class AuthAPI {
     userDBRef.child(uid).set(user.toJson());
   }
 
-  Future<void> addLoginHistory(String uid) async {
+  /// 로그인 기록을 추가합니다
+  Future<void> addLoginDate(String uid) async {
     return await userDBRef
       .child(uid)
       .child('loginDate')
@@ -58,10 +62,14 @@ class AuthAPI {
       .set(DateTime.now().toIso8601String());
   }
 
-  Future<models.User> fetchUser(String uid) async{
-    return await userDBRef.child(uid).get().then((v) => models.User.fromSnapshot(v));
+
+  /// uid에 해당하는 유저를 반환합니다
+  /// uid가 null이면 현재 이용자의 정보를 반환합니다
+  Future<models.User> fetchUser(String? uid) async{
+    return await userDBRef.child(uid ?? auth.currentUser!.uid).get().then((v) => models.User.fromSnapshot(v));
   }
 
+  /// 로그아웃
   Future<void> logout() async {
     await GoogleSignIn().signOut();
     await auth.signOut();
