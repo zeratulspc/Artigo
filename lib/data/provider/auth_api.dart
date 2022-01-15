@@ -26,7 +26,7 @@ class AuthAPI {
     }
     UserCredential userCredential = await auth.signInWithCredential(credential);
     if(userCredential.credential!=null) {
-      await addLoginDate(userCredential.user!.uid);
+      await createLoginDate(userCredential.user!.uid);
     }
     return userCredential;
   }
@@ -54,7 +54,7 @@ class AuthAPI {
   }
 
   /// 로그인 기록을 추가합니다
-  Future<void> addLoginDate(String uid) async {
+  Future<void> createLoginDate(String uid) async {
     return await userDBRef
       .child(uid)
       .child('loginDate')
@@ -65,7 +65,7 @@ class AuthAPI {
 
   /// uid에 해당하는 유저를 반환합니다
   /// uid가 null이면 현재 이용자의 정보를 반환합니다
-  Future<models.User> fetchUser(String? uid) async{
+  Future<models.User> fetchUser({String? uid}) async{
     return await userDBRef.child(uid ?? auth.currentUser!.uid).get().then((v) => models.User.fromSnapshot(v));
   }
 
