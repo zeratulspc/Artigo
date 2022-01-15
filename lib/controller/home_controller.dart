@@ -8,10 +8,7 @@ class HomeController extends GetxController {
   final PageController pageController = PageController(initialPage: 0, keepPage: true);
 
   final _homeIdx = 0.obs;
-  set homeIdx(int v){
-    _homeIdx.value = v;
-    pageController.animateToPage(v, duration: const Duration(milliseconds: 300),curve: Curves.ease);
-  }
+  set homeIdx(int v) => _homeIdx.value = v;
   int get homeIdx => _homeIdx.value;
 
   logout() async {

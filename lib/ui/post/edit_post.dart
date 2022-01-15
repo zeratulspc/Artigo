@@ -1,7 +1,9 @@
+import 'package:artigo2/data/models/post.dart';
 import 'package:flutter/material.dart';
 
 class EditPostPage extends StatelessWidget {
-  EditPostPage({Key? key}) : super(key: key);
+  final Post? post;
+  EditPostPage({Key? key, this.post}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

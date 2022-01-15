@@ -1,4 +1,5 @@
 import 'package:artigo2/data/provider/auth_api.dart';
+import 'package:artigo2/routes/pages.dart';
 import 'package:get/get.dart';
 import 'package:artigo2/data/models/user.dart' as models;
 
@@ -13,6 +14,11 @@ class UserController extends GetxController {
   void onInit() async {
     user = await authAPI.fetchUser();
     super.onInit();
+  }
+
+  logout() async {
+    await authAPI.logout();
+    Get.offAllNamed(Routes.splash);
   }
 
 }
