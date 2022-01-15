@@ -28,5 +28,6 @@ class User {
     'username':username,
     'description':description,
     'registerDate':registerDate.toIso8601String(),
+    'loginDate':loginDate.map((e) => e.toIso8601String()).toList(),
   };
 }

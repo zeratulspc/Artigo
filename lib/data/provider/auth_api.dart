@@ -23,7 +23,11 @@ class AuthAPI {
           description: "",
       );
     }
-    return await auth.signInWithCredential(credential);
+    UserCredential userCredential = await auth.signInWithCredential(credential);
+    if(userCredential.credential!=null) {
+      await addLoginHistory(userCredential.user!.uid);
+    }
+    return userCredential;
   }
 
   Future<bool> isUserValid(String uid) async {
@@ -44,6 +48,18 @@ class AuthAPI {
       loginDate: [],
     );
     userDBRef.child(uid).set(user.toJson());
+  }
+
+  Future<void> addLoginHistory(String uid) async {
+    return await userDBRef
+      .child(uid)
+      .child('loginDate')
+      .push()
+      .set(DateTime.now().toIso8601String());
+  }
+
+  Future<models.User> fetchUser(String uid) async{
+    return await userDBRef.child(uid).get().then((v) => models.User.fromSnapshot(v));
   }
 
   Future<void> logout() async {
