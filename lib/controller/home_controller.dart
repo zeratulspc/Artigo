@@ -1,7 +1,7 @@
-import 'package:artigo2/controller/user_controller.dart';
-import 'package:artigo2/data/models/post.dart';
-import 'package:artigo2/data/provider/auth_api.dart';
-import 'package:artigo2/data/provider/post_api.dart';
+import 'package:artigo/controller/user_controller.dart';
+import 'package:artigo/data/models/post.dart';
+import 'package:artigo/data/provider/auth_api.dart';
+import 'package:artigo/data/provider/post_api.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

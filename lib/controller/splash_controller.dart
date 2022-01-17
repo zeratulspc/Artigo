@@ -1,6 +1,6 @@
-import 'package:artigo2/controller/user_controller.dart';
-import 'package:artigo2/data/provider/auth_api.dart';
-import 'package:artigo2/routes/pages.dart';
+import 'package:artigo/controller/user_controller.dart';
+import 'package:artigo/data/provider/auth_api.dart';
+import 'package:artigo/routes/pages.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 

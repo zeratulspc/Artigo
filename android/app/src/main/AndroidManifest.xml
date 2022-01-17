@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zeratulspc.artigo2">
+    package="com.zeratulspc.artigo">
    <application
-        android:label="artigo2"
+        android:label="artigo"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

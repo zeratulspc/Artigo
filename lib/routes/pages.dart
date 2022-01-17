@@ -1,6 +1,6 @@
-import 'package:artigo2/ui/auth/login.dart';
-import 'package:artigo2/ui/home.dart';
-import 'package:artigo2/ui/splash.dart';
+import 'package:artigo/ui/auth/login.dart';
+import 'package:artigo/ui/home.dart';
+import 'package:artigo/ui/splash.dart';
 import 'package:get/get.dart';
 
 part './routes.dart';

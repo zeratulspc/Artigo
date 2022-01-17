@@ -1,9 +1,9 @@
-import 'package:artigo2/controller/home_controller.dart';
-import 'package:artigo2/routes/pages.dart';
-import 'package:artigo2/ui/feed/feed_widget.dart';
-import 'package:artigo2/ui/post/edit_post.dart';
-import 'package:artigo2/ui/profile/profile_widget.dart';
-import 'package:artigo2/ui/setting/setting_widget.dart';
+import 'package:artigo/controller/home_controller.dart';
+import 'package:artigo/routes/pages.dart';
+import 'package:artigo/ui/feed/feed_widget.dart';
+import 'package:artigo/ui/post/edit_post.dart';
+import 'package:artigo/ui/profile/profile_widget.dart';
+import 'package:artigo/ui/setting/setting_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

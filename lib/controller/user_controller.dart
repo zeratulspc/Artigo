@@ -1,7 +1,7 @@
-import 'package:artigo2/data/provider/auth_api.dart';
-import 'package:artigo2/routes/pages.dart';
+import 'package:artigo/data/provider/auth_api.dart';
+import 'package:artigo/routes/pages.dart';
 import 'package:get/get.dart';
-import 'package:artigo2/data/models/user.dart' as models;
+import 'package:artigo/data/models/user.dart' as models;
 
 class UserController extends GetxController {
   final authAPI = AuthAPI();

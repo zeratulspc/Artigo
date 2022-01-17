@@ -1,5 +1,5 @@
-import 'package:artigo2/controller/home_controller.dart';
-import 'package:artigo2/ui/post/post_widget.dart';
+import 'package:artigo/controller/home_controller.dart';
+import 'package:artigo/ui/post/post_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

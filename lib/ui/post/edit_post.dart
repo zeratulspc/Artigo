@@ -1,4 +1,4 @@
-import 'package:artigo2/data/models/post.dart';
+import 'package:artigo/data/models/post.dart';
 import 'package:flutter/material.dart';
 
 class EditPostPage extends StatelessWidget {

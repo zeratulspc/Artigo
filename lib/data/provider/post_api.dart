@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-import 'package:artigo2/data/models/post.dart' as models;
+import 'package:artigo/data/models/post.dart' as models;
 
 
 class PostAPI {
