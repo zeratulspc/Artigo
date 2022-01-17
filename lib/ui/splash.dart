@@ -1,4 +1,4 @@
-import 'package:artigo2/controller/splash_controller.dart';
+import 'package:artigo/controller/splash_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
