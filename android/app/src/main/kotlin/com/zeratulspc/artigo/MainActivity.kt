@@ -1,4 +1,4 @@
-package com.zeratulspc.artigo2
+package com.zeratulspc.artigo
 
 import io.flutter.embedding.android.FlutterActivity
 
