@@ -8,25 +8,33 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:827287054914:android:198359faeb760f9d805bdb",
+        "mobilesdk_app_id": "1:827287054914:android:caff92cf97846573805bdb",
         "android_client_info": {
-          "package_name": "com.zeratulspc.artigo2"
+          "package_name": "com.zeratulspc.artigo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "827287054914-krako4k0iug9v51fcpo33ie84jk6fe06.apps.googleusercontent.com",
+          "client_id": "827287054914-37bp40amk202hrigh9g181s1dumnfuk7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.zeratulspc.artigo2",
+            "package_name": "com.zeratulspc.artigo",
+            "certificate_hash": "60aab5609b86241276081b15582af982c9587cf3"
+          }
+        },
+        {
+          "client_id": "827287054914-l7aeebdh699tk82ajvorcifhb9g0o589.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zeratulspc.artigo",
             "certificate_hash": "98164beb167ebca8712d80ddaff8b7df4031a569"
           }
         },
         {
-          "client_id": "827287054914-mtl1kk7njgs8pv3g8qdmt6uo3cff6tsk.apps.googleusercontent.com",
+          "client_id": "827287054914-ses75tfo23llqck7jfkkenkd3eij942t.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.zeratulspc.artigo2",
+            "package_name": "com.zeratulspc.artigo",
             "certificate_hash": "7a1e10b7cbed834166df60a9cda9e14cd8180d1a"
           }
         },
