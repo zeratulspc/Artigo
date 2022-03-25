@@ -5,11 +5,11 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:artigo/data/models/user.dart' as models;
 
 class AuthAPI {
-  final FirebaseAuth auth = FirebaseAuth.instance;
-  final userDBRef = FirebaseDatabase.instance.reference().child("Users");
+  static final FirebaseAuth auth = FirebaseAuth.instance;
+  static final userDBRef = FirebaseDatabase.instance.reference().child("Users");
 
   /// 구글 계정을 통해 로그인합니다
-  Future<UserCredential> signInWithGoogle() async {
+  static Future<UserCredential> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
     final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
     final credential = GoogleAuthProvider.credential(
@@ -32,13 +32,13 @@ class AuthAPI {
   }
 
   /// 사용자가 존재하는지 확인합니다
-  Future<bool> isUserExists(String uid) async {
+  static Future<bool> isUserExists(String uid) async {
     var data = await userDBRef.child(uid).once();
     return data.exists;
   }
 
   /// 사용자 정보를 생성합니다
-  Future<void> createUserInfo({
+  static Future<void> createUserInfo({
     required String uid,
     required String username,
     required String description,
@@ -54,7 +54,7 @@ class AuthAPI {
   }
 
   /// 로그인 기록을 추가합니다
-  Future<void> createLoginDate(String uid) async {
+  static Future<void> createLoginDate(String uid) async {
     return await userDBRef
       .child(uid)
       .child('loginDate')
@@ -65,12 +65,12 @@ class AuthAPI {
 
   /// uid에 해당하는 유저를 반환합니다
   /// uid가 null이면 현재 이용자의 정보를 반환합니다
-  Future<models.User> fetchUser({String? uid}) async{
+  static Future<models.User> fetchUser({String? uid}) async{
     return await userDBRef.child(uid ?? auth.currentUser!.uid).get().then((v) => models.User.fromSnapshot(v));
   }
 
   /// 로그아웃
-  Future<void> logout() async {
+  static Future<void> logout() async {
     await GoogleSignIn().signOut();
     await auth.signOut();
   }
