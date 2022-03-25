@@ -5,11 +5,10 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
-  final AuthAPI authApi = AuthAPI();
   final UserController userController = Get.put<UserController>(UserController());
 
   login() async {
-    var credential = await authApi.signInWithGoogle();
+    var credential = await AuthAPI.signInWithGoogle();
     if(credential.credential!=null) {
       userController.fetchUser();
       Get.offAllNamed(Routes.home);

@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   final UserController userController = Get.find<UserController>();
-  final PostAPI postAPI = PostAPI();
   final PageController pageController = PageController(initialPage: 0, keepPage: true);
 
   final _homeIdx = 0.obs;
@@ -26,11 +25,16 @@ class HomeController extends GetxController {
 
   /// 피드를 불러옵니다
   Future<void> fetchFeed() async {
-    await postAPI.fetchFeed().then((v) => feed = v);
+    await PostAPI.fetchFeed().then((v) => feed = v);
   }
 
   /// 게시글을 생성합니다
   Future<void> createPost(Post post) async {
-    await postAPI.createPost(post);
+    await PostAPI.createPost(post);
+  }
+
+  /// 게시글 상세 페이지를 엽니다
+  void openPost() {
+
   }
 }
