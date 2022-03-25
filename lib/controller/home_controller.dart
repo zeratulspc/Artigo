@@ -2,6 +2,7 @@ import 'package:artigo/controller/user_controller.dart';
 import 'package:artigo/data/models/post.dart';
 import 'package:artigo/data/provider/auth_api.dart';
 import 'package:artigo/data/provider/post_api.dart';
+import 'package:artigo/routes/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,7 +35,14 @@ class HomeController extends GetxController {
   }
 
   /// 게시글 상세 페이지를 엽니다
-  void openPost() {
-
+  void openPostDetail(String? postKey, Post? post) {
+    if(postKey!=null) {
+      Get.toNamed(
+        '${Routes.post}/$postKey',
+        arguments: post!,
+      );
+  } else {
+      print("NO KEY");
+    }
   }
 }

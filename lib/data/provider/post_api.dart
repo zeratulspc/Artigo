@@ -15,7 +15,14 @@ class PostAPI {
 
   /// 피드를 불러옵니다
   static Future<List<models.Post>> fetchFeed() async {
-    return await postDBRef.get().then((v) => v.value.values.map((e)=>models.Post.fromMap(e)).toList().cast<models.Post>());
+    return await postDBRef.get().then((v) {
+      List<models.Post> result = [];
+      Map<dynamic, dynamic> data = v.value;
+      data.forEach((key, value) {
+        result.add(models.Post.fromMap(key,value));
+      });
+      return result;
+    });
   }
 
   /// 하나의 게시글을 불러옵니다

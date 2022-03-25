@@ -11,7 +11,10 @@ class FeedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(()=>controller.feed.isNotEmpty?ListView.builder(
       itemCount: controller.feed.length,
-      itemBuilder: (context, i) => PostWidget(post: controller.feed[i]),
+      itemBuilder: (context, i) => PostWidget(
+        post: controller.feed[i],
+        onTap: ()=>controller.openPostDetail(controller.feed[i].key, controller.feed[i]),
+      ),
     ):Center(child: Text("게시글 없음"),));
   }
 
