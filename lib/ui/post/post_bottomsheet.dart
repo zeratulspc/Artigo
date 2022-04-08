@@ -1,5 +1,7 @@
 import 'package:artigo/data/models/post.dart';
+import 'package:artigo/routes/pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class PostBottomSheet extends StatelessWidget {
   final String? postKey;
@@ -22,7 +24,7 @@ class PostBottomSheet extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.edit),
               title: const Text("수정하기"),
-              onTap: (){},
+              onTap: ()=>Get.toNamed("${Routes.edit}/$postKey", arguments: post),
             ),
             ListTile(
               leading: const Icon(Icons.delete),

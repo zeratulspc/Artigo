@@ -16,11 +16,10 @@ class FeedWidget extends StatelessWidget {
       itemBuilder: (context, i) => PostWidget(
         post: controller.feed[i],
         onTap: ()=>controller.openPostDetail(controller.feed[i].key, controller.feed[i]),
-        onLongPress: controller.feed[i].owner == (controller.userController.user?.uid??"") ?
-            ()=>Get.bottomSheet(const PostBottomSheet())
-            :null,
+        onLongPress: controller.feed[i].owner == (controller.userController.user?.uid??"")?
+          ()=>Get.bottomSheet(PostBottomSheet(postKey: controller.feed[i].key, post: controller.feed[i])) :null,
       ),
-    ):Center(child: Text("게시글 없음"),));
+    ):const Center(child: Text("게시글 없음"),));
   }
 
 }

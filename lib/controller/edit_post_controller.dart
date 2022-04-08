@@ -27,6 +27,10 @@ class EditPostController extends GetxController {
     if(postKey!=null&&post==null) {
       post = await PostAPI.fetchPost(postKey!);
     }
+    if(post!=null) {
+      titleController.text = post!.title;
+      bodyController.text = post!.body;
+    }
     titleFocusNode.addListener(() => titleFocused = titleFocusNode.hasFocus);
     super.onInit();
   }
@@ -37,9 +41,18 @@ class EditPostController extends GetxController {
     if(bodyController.text=="") return;
     if(postKey!=null) {
       /// update post
+      final Post _post = Post(
+        key: post!.key,
+        title: titleController.text,
+        body: bodyController.text,
+        owner: userController.user!.uid,
+        postDate: post!.postDate,
+        editDate: List.from(post!.editDate)..add(DateTime.now()),
+      );
+      await PostAPI.updatePost(post!.key, _post);
     } else {
       /// create post
-      final Post post = Post(
+      final Post _post = Post(
         key: "",
         title: titleController.text,
         body: bodyController.text,
@@ -47,7 +60,7 @@ class EditPostController extends GetxController {
         postDate: DateTime.now(),
         editDate: [],
       );
-      await PostAPI.createPost(post);
+      await PostAPI.createPost(_post);
     }
     Get.back(); /// back to previous page
   }
