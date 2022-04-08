@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
       floatingActionButton: controller.homeIdx==0?
         FloatingActionButton(
           child: const Icon(Icons.add),
-          onPressed: () => Get.to(()=>EditPostPage()),
+          onPressed: () => Get.toNamed(Routes.edit),
         ):null,
       bottomNavigationBar: Obx(()=>BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
