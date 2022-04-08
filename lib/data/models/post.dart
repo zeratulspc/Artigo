@@ -35,7 +35,7 @@ class Post {
       body: m['body'],
       owner: m['owner'],
       postDate: DateTime.parse(m['postDate']!),
-      editDate: m['editDate']?.values.map((e)=>DateTime.parse(e)).toList().cast<DateTime>()??<DateTime>[],
+      editDate: m['editDate']?.map((e)=>DateTime.parse(e)).toList().cast<DateTime>()??<DateTime>[],
     );
   }
 
